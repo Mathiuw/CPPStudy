@@ -1,5 +1,7 @@
 #include <iostream>
+#include <string>
 #include <vector>
+#include <cmath>
 
 typedef std::vector<std::pair<std::string, int>> pairlist_t;
 //typedef std::string text_t;
@@ -152,6 +154,238 @@ int main()
 
 	students = 6 - 5 + 4 * 3 / 2;
 	std::cout << students << "\n" << std::endl;
+
+	// Type conversion = conversion a value of one data type to another
+	//					Implicit = automatic
+	//					Explicit = Precede value with new data type (int)
+
+	//Implicit
+	int pi_1 = 3.14;
+	std::cout << pi_1 << "\n"; //3
+
+	char c = 100;
+	std::cout << c << "\n"; //d on ASCII table
+
+	//Explicit
+	double pi_2 = (int)3.14;
+	std::cout << pi_2 << "\n"; //3
+
+	int correct = 8;
+	int questions = 10;
+	double score = (double)correct / (double)questions * 100;
+
+	std::cout << score << "%" << "\n" << std::endl;
+
+	// User input
+	//cin >> (extraction operator)
+
+	std::string nameInput;
+	int ageInput;
+	
+	//std::cout << "Whars your age?: ";
+	//std::cin >> ageInput;
+
+	//std::cout << "What's your full name?: ";
+	//std::getline(std::cin >> std::ws, nameInput);
+
+	//std::cout << std::endl << "Hello " << nameInput << "\n";
+	//std::cout << "You're " << ageInput << " years old";
+
+	// Useful math functions
+
+	x = 3.99;
+	y = 4;
+	double z;
+
+	//z = std::max(x_2, y_2);
+	//z = std::min(x_2, y_2);
+	//z = pow(2, 4);
+	//z = sqrt(9);
+	//z = abs(-56);
+	//z = round(x_2);
+	//z = ceil(x_2);
+	z = floor(x);
+
+	std::cout << z << "\n" << std::endl;
+
+	// Hypotenuse calculator
+
+	//double sideA;
+	//double sideB;
+	//double hypotenuse;
+
+	//std::cout << "Enter side A: ";
+	//std::cin >> sideA;
+
+	//std::cout << "Enter side B: ";
+	//std::cin >> sideB;
+
+	//hypotenuse = sqrt(pow(sideA, 2) + pow(sideB, 2));
+
+	//std::cout << "Hypotenuse = " << hypotenuse << "\n" << std::endl;
+
+	// if statement
+
+	//std::cout << "Enter your age: ";
+	//std::cin >> ageInput;
+
+	//if (ageInput >= 100)
+	//{
+	//	std::cout << "You are too old to enter this site!";
+	//}
+	//else if (ageInput >= 18)
+	//{
+	//	std::cout << "Welcome to the site!";
+	//}
+	//else if(ageInput < 0)
+	//{
+	//	std::cout << "You haven't been born yet!";
+	//}
+	//else
+	//{
+	//	std::cout << "You are not old enough to enter!";
+	//}
+
+	// Switch = alternative to using many "else if" statements
+
+	//int month;
+	//std::cout << "Enter the month(1-12): ";
+	//std::cin >> month;
+
+	//switch (month)
+	//{
+	//case 1: 
+	//	std::cout << "It's January";
+	//	break;
+	//case 2:
+	//	std::cout << "It's February";
+	//	break;
+	//case 3:
+	//	std::cout << "It's March";
+	//	break;
+	//case 4:
+	//	std::cout << "It's April";
+	//	break;
+	//case 5:
+	//	std::cout << "It's May";
+	//	break;
+	//case 6:
+	//	std::cout << "It's June";
+	//	break;
+	//case 7:
+	//	std::cout << "It's July";
+	//	break;
+	//case 8:
+	//	std::cout << "It's August";
+	//	break;
+	//case 9:
+	//	std::cout << "It's September";
+	//	break;
+	//case 10:
+	//	std::cout << "It's October";
+	//	break;
+	//case 11:
+	//	std::cout << "It's November";
+	//	break;
+	//case 12:
+	//	std::cout << "It's December";
+	//	break;
+
+	//default:
+	//	std::cout << "Please enter in only numbers (1-12)";
+	//	break;
+	//}
+
+	//std::cout << "What letter grade?: ";
+	//std::cin >> grade;
+
+	//switch (grade)
+	//{
+	//case 'A':
+	//	std::cout << "You did great!";
+	//	break;
+	//case 'B':
+	//	std::cout << "You did good";
+	//	break;
+	//case 'C':
+	//	std::cout << "You did okay";
+	//	break;
+	//case 'D':
+	//	std::cout << "You did not do good";
+	//	break;
+	//case 'F':
+	//	std::cout << "YOU FAILED";
+	//	break;
+
+	//default:
+	//	std::cout << "Please enter in a letter grade (A-F)";
+	//	break;
+	//}
+	
+	// Simple calculator program
+
+	//char op;
+	//double num1;
+	//double num2;
+	//double result;
+
+	//std::cout << "********** CALCULATOR **********\n";
+
+	//std::cout << "Enter either (+ - * /): ";
+	//std::cin >> op;
+
+	//std::cout << "Enter #1: ";
+	//std::cin >> num1;
+
+	//std::cout << "Enter #2: ";
+	//std::cin >> num2;
+
+	//switch (op)
+	//{
+	//case '+':
+	//	result = num1 + num2;
+	//	std::cout << "Result: " << result << '\n';
+	//	break;
+	//case '-':
+	//	result = num1 - num2;
+	//	std::cout << "Result: " << result << '\n';
+	//	break;
+	//case '*':
+	//	result = num1 * num2;
+	//	std::cout << "Result: " << result << '\n';
+	//	break;
+	//case '/':
+	//	result = num1 / num2;
+	//	std::cout << "Result: " << result << '\n';
+	//	break;
+
+	//default:
+	//	std::cout << "Please enter a valid operator" << '\n';
+	//	break;
+	//}
+
+	//std::cout << "********************************\n";
+
+	// Ternary operator ?: = replacement to an if/else statement
+	// condition ? expression1 : expression2;
+	
+	grade = 75;
+	
+	grade >= 60 ? std::cout << "You pass!" : std::cout << "You fail!";
+	std::cout << "\n";
+
+	int number = 9;
+	number % 2 == 1 ? std::cout << "ODD" : std::cout << "EVEN";
+	std::cout << "\n";
+
+	bool hungry = true;
+	//hungry ? std::cout << "You are hungry!" : std::cout << "You are full!";
+	std::cout << (hungry ? "You are hungry!" : "You are full!");
+
+	// Logical Operators
+	// && = check if two conditions are true
+	// || = check if at least one of two conditiond is true
+	// ! = reverses the logical state of its operand
 
 	return 0;
 }
