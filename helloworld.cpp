@@ -380,12 +380,103 @@ int main()
 
 	bool hungry = true;
 	//hungry ? std::cout << "You are hungry!" : std::cout << "You are full!";
-	std::cout << (hungry ? "You are hungry!" : "You are full!");
+	std::cout << (hungry ? "You are hungry!" : "You are full!") << "\n" << std::endl;
 
 	// Logical Operators
 	// && = check if two conditions are true
 	// || = check if at least one of two conditiond is true
 	// ! = reverses the logical state of its operand
+
+	//int temp;
+	bool sunny = true;
+
+	/*std::cout << "Enter the temperature: ";
+	std::cin >> temp;
+
+	if (temp <= 0 || temp >= 30)
+	{
+		std::cout << "The temperature is bad!";
+	}
+	else
+	{
+		std::cout << "The temperature is good!";
+	}
+
+	if (!sunny)
+	{
+		std::cout << "It is cloudy outside!";
+	}
+	else
+	{
+		std::cout << "Its sunny outside";
+	}*/
+
+	//TEMPERATURE CONVERTER PROGRAM
+
+	double temp;
+	char unit;
+
+	//std::cout << "***** TEMPERATURE CONVERSION *****\n";
+	//std::cout << "F = Fahrenheit\n";
+	//std::cout << "C = Celsius\n";
+	//std::cout << "What unit would you like to conversion to: ";
+	//std::cin >> unit;
+
+	//if (unit == 'F'	 || unit == 'f')
+	//{
+	//	std::cout << "Enter the temperature in Celsius: ";
+	//	std::cin >> temp;
+
+	//	temp = (1.8 * temp) + 32.0;
+	//	std::cout << "Temperature is: " << temp << "F\n";
+	//}
+	//else if (unit == 'C' || unit == 'c')
+	//{
+	//	std::cout << "Enter the temperature in Fahrenheit: ";
+	//	std::cin >> temp;
+
+	//	temp = (temp - 32) / 1.8;
+	//	std::cout << "Temperature is: " << temp << "C\n";
+	//}
+	//else
+	//{
+	//	std::cout << "Please enter only C or F\n";
+	//}
+	//std::cout << "**********************************\n";
+
+	//USEFUL STRING METHODS
+
+	std::cout << "Enter your name: ";
+	std::getline(std::cin, name);
+
+	//if (name.length() > 12)
+	//{
+	//	std::cout << "Your name can't be over 12 characters";
+	//}
+	//else if (name.empty())
+	//{
+	//	std::cout << "Invalid name";
+	//}
+	//else
+	//{
+	//	std::cout << "Welcome " << name << "!!!";
+	//}
+
+	//name.clear();
+
+	//name.append("@gmail.com");
+
+	//std::cout << "Welcome " << name.at(0) << "!!!\n";
+
+	//name.insert(0, "@");
+
+	//std::cout << name.find(' ') << "\n";
+
+	//name.erase(0, 3);
+
+	std::cout << "Welcome " << name << "!!!";
+
+	//WHILE LOOPS
 
 	return 0;
 }
