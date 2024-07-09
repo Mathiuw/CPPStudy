@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <cmath>
+#include <ctime>
 
 typedef std::vector<std::pair<std::string, int>> pairlist_t;
 //typedef std::string text_t;
@@ -18,6 +19,10 @@ namespace second
 {
 	int x = 2;
 }
+
+void HappyBirthday(std::string name, int age);
+
+double square(double length);
 
 int main() 
 {
@@ -410,8 +415,8 @@ int main()
 	{
 		std::cout << "Its sunny outside";
 	}*/
-
-	//TEMPERATURE CONVERTER PROGRAM
+	 
+	// TEMPERATURE CONVERTER PROGRAM
 
 	double temp;
 	char unit;
@@ -444,10 +449,10 @@ int main()
 	//}
 	//std::cout << "**********************************\n";
 
-	//USEFUL STRING METHODS
+	// USEFUL STRING METHODS
 
-	std::cout << "Enter your name: ";
-	std::getline(std::cin, name);
+	//std::cout << "Enter your name: ";
+	//std::getline(std::cin, name);
 
 	//if (name.length() > 12)
 	//{
@@ -474,9 +479,195 @@ int main()
 
 	//name.erase(0, 3);
 
-	std::cout << "Welcome " << name << "!!!";
+	//std::cout << "Welcome " << name << "!!!";
 
-	//WHILE LOOPS
+	// WHILE LOOPS
+
+	//name.clear();
+
+	//while(name.empty())
+	//{
+	//	std::cout << "enter your name: ";
+	//	std::getline(std::cin, name);
+
+	//}
+
+	// DO WHILE LOOPS
+
+	/*number == 0;
+
+	do
+	{
+		std::cout << "Enter a positive #: ";
+		std::cin >> number;
+	} while (number < 0);
+
+	std::cout << "The # is: " << number;*/
+
+	//For Loops
+
+	for (int i = 10; i >= 0; i--)
+	{
+		std::cout << i << "\n";
+	}
+
+	std::cout << "HAPPY NEW YEAR!!" << "\n\n";
+
+	// BREAK & CONTINUE
+
+	// break = break out of a loop
+	// continue = skip current iterarion
+
+	for (int i = 1; i <= 20; i++)
+	{
+		if (i == 13)
+		{
+			continue;
+		}
+
+		std::cout << i << "\n";
+	}
+
+	// NESTED LOOP
+	// Loop inside a loop
+
+	for (int i = 1; i <= 3; i++)
+	{
+		for (int j = 1; j <= 10; j++)
+		{
+			std::cout << j << ' ';
+		}
+
+		std::cout << "\n";
+	}
+	std::cout << "\n";
+
+	//int rows;
+	//int collumns;
+	//char symbol;
+
+	//std::cout << "How many rows?: ";
+	//std::cin >> rows;
+
+	//std::cout << "How many columns?: ";
+	//std::cin >> collumns;
+
+	//std::cout << "Insert a asymbol to use: ";
+	//std::cin >> symbol;
+
+	//std::cout << "\n";
+
+	//for (int i = 1; i <= collumns; i++)
+	//{
+	//	for (int i = 1; i <= rows; i++)
+	//	{
+	//		std::cout << symbol;
+	//	}
+
+	//	std::cout << "\n";
+	//}
+
+	// RANDOM NUMBER GENERATOR
+	// Pseudo-random = NOT truly random (but close)
+
+	srand(time(NULL));
+
+	int num1 = (rand() % 6) + 1;
+	int num2 = (rand() % 6) + 1;
+	int num3 = (rand() % 6) + 1;
+
+	std::cout << num1 << '\n';
+	std::cout << num2 << '\n';
+	std::cout << num3 << "\n\n";
+
+	srand(time(0));
+	int randNum = (rand() % 5) + 1;
+
+	switch (randNum)
+	{
+		case 1: 
+			std::cout << "You win a bumper sticker!\n";
+			break;
+		case 2:
+			std::cout << "You win a t-shirt!\n";
+			break;
+		case 3:
+			std::cout << "You win a free lunch!\n";
+			break;
+		case 4:
+			std::cout << "You win a gift card!\n";
+			break;
+		case 5:
+			std::cout << "You win a concert tickets!\n";
+			break;
+	}
+	std::cout << "\n\n";
+
+	// NUMBER GUESSING GAME
+
+	/*int num;
+	int guess;
+	int tries = 0;
+
+	srand(time(NULL));
+	num = (rand() % 100) + 1;
+
+	std::cout << "****** NUMBER GUESSING GAME ******\n";
+
+	do
+	{
+		std::cout << "Enter a guess between (1-100): ";
+		std::cin >> guess;
+		tries++;
+
+		if (guess > num)
+		{
+			std::cout << "Too high!\n";
+		}
+		else if (guess < num)
+		{
+			std::cout << "Too low!\n";
+		}
+		else
+		{
+			std::cout << "CORRECT! # of tries: " << tries << "\n\n";
+		}
+
+	} while (guess != num);
+
+	std::cout << "**********************************\n";*/
+
+	// FUNCTIONS
+	// Function = a block of reusable code
+
+	name = "Mateus";
+	age = 21;
+
+	HappyBirthday(name, age);
+
+	// RETURN KEYWORD
+	// return = return a value back to the spot
+	//			where you called the encompassing function
+
+	double length = 5.0;
+	double area = square(length);
+
+	std::cout << "Area: " << area << "cm^2\n";
 
 	return 0;
+}
+
+void HappyBirthday(std::string name, int age)
+{
+	std::cout << "Happy Birthday to you!!\n";
+	std::cout << "Happy Birthday to you!!\n";
+	std::cout << "Happy Birthday dear " << name << "!!\n";
+	std::cout << "Happy Birthday to you!!\n";
+	std::cout << "Happy Birthday to you!!\n";
+	std::cout << "You are " << age << " years old!!\n\n";
+}
+
+double square(double length)
+{
+	return length * length;
 }
