@@ -1,9 +1,4 @@
 ﻿  helloworld.cpp
-C:\Users\mateu\source\repos\CPPStudy\helloworld.cpp(168,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\mateu\source\repos\CPPStudy\helloworld.cpp(201,6): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\mateu\source\repos\CPPStudy\helloworld.cpp(573,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\mateu\source\repos\CPPStudy\helloworld.cpp(583,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\mateu\source\repos\CPPStudy\helloworld.cpp(188,6): warning C4101: 'ageInput': unreferenced local variable
-C:\Users\mateu\source\repos\CPPStudy\helloworld.cpp(421,9): warning C4101: 'temp': unreferenced local variable
-C:\Users\mateu\source\repos\CPPStudy\helloworld.cpp(422,7): warning C4101: 'unit': unreferenced local variable
+C:\Users\mateu\source\repos\CPPStudy\helloworld.cpp(949,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\mateu\source\repos\CPPStudy\helloworld.cpp(961,1): warning C4715: 'GetComputerChoice': not all control paths return a value
   CPPStudy.vcxproj -> C:\Users\mateu\source\repos\CPPStudy\x64\Debug\CPPStudy.exe
