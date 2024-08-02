@@ -53,6 +53,12 @@ void ShowChoice(char choice);
 
 void ChooseWinner(char player, char computer);
 
+double GetTotal(double prices[], int size);
+
+int SearchArray(std::string array[], int size, std::string element);
+
+void Sort(int array[], int size);
+
 int main() 
 {
 	// This is a comment
@@ -799,7 +805,7 @@ int main()
 	//std::cout << sizeof(students)/sizeof(std::string) << " elements\n";
 
 	// ITERATE OVER AN ARRAY
-	
+	//
 	//std::string students[] = {"Spongebob", "Patrick", "Squidward", "Sandy"};
 	//char grades[] = { 'A', 'B', 'C', 'D', 'F' };
 
@@ -829,6 +835,137 @@ int main()
 	//{
 	//	std::cout << grade << '\n';
 	//}
+
+	// PASS ARRAY TO A FUNCTION
+
+	//double prices[] = { 49.99, 15.05, 75.00, 9.99 };
+	//int size = sizeof(prices) / sizeof(prices[0]);
+	//double total = GetTotal(prices, size);
+
+	//std::cout << "R$" << total;
+
+	// SEARCH AN ARRAY FOR AN ELEMENT
+
+	//int numbers[] = { 1, 2, 3, 4, 5, 6,7, 8, 9, 10 };
+	//int size = sizeof(numbers) / sizeof(int);
+	//int index;
+	//int myNum;
+
+	//std::cout << "Enter element to search for: " << '\n';
+	//std::cin >> myNum;
+
+	//index = SearchArray(numbers, size, myNum);
+
+	//if (index != -1)
+	//{
+	//	std::cout << myNum << " is at the index " << index;
+	//}
+	//else
+	//{
+	//	std::cout << myNum << " is not in the array";
+	//}
+
+	//std::string foods[] = { "Pizza", "Hamburger", "Hotdog" };
+	//size = sizeof(foods) / sizeof(std::string);
+	//std::string myFood;
+
+	//std::cout << "Enter element to search for: " << '\n';
+	//std::getline(std::cin, myFood);
+	//index = SearchArray(foods, size, myFood);
+
+	//if (index != -1)
+	//{
+	//	std::cout << myFood << " is at the index " << index;
+	//}
+	//else
+	//{
+	//	std::cout << myFood << " is not in the array";
+	//}
+	
+	// ARRAY SORT (BUBBLE SORT)
+	
+	//int array[] = { 10,7,9,2,1,4,6,3,5,8 };
+	//int size = sizeof(array) / sizeof(int);
+
+	//std::cout << "Before sort: ";
+	//for (int i = 0; i < size; i++)
+	//{
+	//	std::cout << array[i] << ' ';
+	//}
+
+	//Sort(array, size);
+
+	//std::cout << "\n\nAfter sort: ";
+	//for (int i = 0; i < size; i++)
+	//{
+	//	std::cout << array[i] << ' ';
+	//}
+	
+	// FILL() FUNCTION
+	//
+	// fill() = Fills a range of elements with a specified value
+	//			fill(begin, end, value)
+	
+	//const int SIZE = 99;
+	//std::string foods[SIZE];
+
+	//fill(foods, foods + (SIZE/3), "Pizza");
+	//fill(foods + (SIZE/3), foods + (SIZE/3)*2, "Hamburger");
+	//fill(foods + (SIZE / 3) * 2, foods + SIZE, "Dogao");
+	// 
+	//for (std::string food : foods)
+	//{
+	//	std::cout << food << '\n';
+	//}
+
+	// FILL AN ARRAY WITH USER INPUT
+		
+	/*std::string foods[5];
+	int size = sizeof(foods) / sizeof(std::string);
+	std::string temp;
+
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << i+1 << "# Enter a food you like or 'q' to quit: ";
+		std::getline(std::cin, temp);
+
+		if (temp == "q")
+		{
+			break;
+		}
+		else
+		{
+			foods[i] = temp;
+		}
+	}
+
+	std::cout << "\nYou like the following food:\n";
+
+	for (int i = 0; !foods[i].empty(); i++)
+	{
+		std::cout << foods[i] << '\n';
+	}*/
+
+	// MULTIDIMENSIONAL ARRAYS
+
+	//std::string cars[][3] = { { "Mustang", "Escape", "F-150" },
+	//						{ "Corvertte", "Equinox", "Silverado" },
+	//						{ "Challenger", "Durango", "Ram 1500" } };
+
+	//int rows = sizeof(cars) / sizeof(cars[0]);
+	//int collumns = sizeof(cars[0]) / sizeof(cars[0][0]);
+
+	//for (int i = 0; i < rows; i++)
+	//{
+	//	for (int j = 0; j < collumns; j++)
+	//	{
+	//		std::cout << cars[i][j] << " ";
+	//	}
+	//	std::cout << '\n';
+	//}
+
+	// QUIZ GAME
+	
 
 	return 0;
 }
@@ -1025,5 +1162,48 @@ void ChooseWinner(char player, char computer)
 			break;
 		}
 		break;
+	}
+}
+
+double GetTotal(double prices[], int size)
+{
+	double total = 0;
+
+	for (int i = 0; i < size ; i++)
+	{
+		total += prices[i];
+	}
+
+	return total;
+}
+
+int SearchArray(std::string array[], int size, std::string element)
+{
+	for (int i = 0; i < size; i++)
+	{
+		if (array[i] == element)
+		{
+			return i;
+		}
+	}
+	return -1;
+}
+
+void Sort(int array[], int size)
+{
+	for (int i = 0; i < size-1; i++)
+	{
+		for (int j = 0; j < size - i - 1; j++)
+		{
+			int nextIndex = j + 1;
+
+			if (nextIndex < size && array[j] > array[nextIndex])
+			{
+				int temp = array[j];
+
+				array[j] = array[nextIndex];
+				array[nextIndex] = temp;
+			}
+		}
 	}
 }
