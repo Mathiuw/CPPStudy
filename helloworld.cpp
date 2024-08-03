@@ -59,7 +59,15 @@ int SearchArray(std::string array[], int size, std::string element);
 
 void Sort(int array[], int size);
 
-int main() 
+void Swap(std::string &x, std::string &y);
+
+void PrintInfo(const std::string &name, const int &age);
+
+int GetDigit(const int number);
+int SumOddDigits(const std::string cardNumber);
+int SumEvenDigits(const std::string cardNumber);
+
+int main()
 {
 	// This is a comment
 
@@ -142,7 +150,7 @@ int main()
 	//			   in large projects. Eacg entity needs a unique name.
 	//			   A namespace allows for identically named entities 
 	//			   as long as the namespaces are different
-	
+
 	//std::cout << x << "\n";
 	//std::cout << first::x << "\n";
 	//std::cout << second::x << "\n\n";
@@ -221,7 +229,7 @@ int main()
 
 	//std::string nameInput;
 	//int ageInput;
-	
+
 	//std::cout << "Whars your age?: ";
 	//std::cin >> ageInput;
 
@@ -361,7 +369,7 @@ int main()
 	//	std::cout << "Please enter in a letter grade (A-F)";
 	//	break;
 	//}
-	
+
 	// Simple calculator program
 
 	//char op;
@@ -408,7 +416,7 @@ int main()
 
 	// Ternary operator ?: = replacement to an if/else statement
 	// condition ? expression1 : expression2;
-	
+
 	//grade = 75;
 	//
 	//grade >= 60 ? std::cout << "You pass!" : std::cout << "You fail!";
@@ -450,7 +458,7 @@ int main()
 	{
 		std::cout << "Its sunny outside";
 	}*/
-	 
+
 	// TEMPERATURE CONVERTER PROGRAM
 
 	//double temp;
@@ -620,7 +628,7 @@ int main()
 
 	switch (randNum)
 	{
-		case 1: 
+		case 1:
 			std::cout << "You win a bumper sticker!\n";
 			break;
 		case 2:
@@ -784,12 +792,12 @@ int main()
 	//std::cout << prices[1] << '\n';
 	//std::cout << prices[2] << '\n';
 	//std::cout << prices[3] << '\n';
-	
+
 	// SIZEOFF() OPERATOR
 	// 
 	// sizeoff() = determines the size in the bytes of a:
 	//			   variable, data type, class, objects, etc;
-	
+
 	//double gpa = 2.5;
 	//std::string name = "Mateus";
 	//char grade = 'F';
@@ -881,9 +889,9 @@ int main()
 	//{
 	//	std::cout << myFood << " is not in the array";
 	//}
-	
+
 	// ARRAY SORT (BUBBLE SORT)
-	
+
 	//int array[] = { 10,7,9,2,1,4,6,3,5,8 };
 	//int size = sizeof(array) / sizeof(int);
 
@@ -900,12 +908,12 @@ int main()
 	//{
 	//	std::cout << array[i] << ' ';
 	//}
-	
+
 	// FILL() FUNCTION
 	//
 	// fill() = Fills a range of elements with a specified value
 	//			fill(begin, end, value)
-	
+
 	//const int SIZE = 99;
 	//std::string foods[SIZE];
 
@@ -919,7 +927,7 @@ int main()
 	//}
 
 	// FILL AN ARRAY WITH USER INPUT
-		
+
 	/*std::string foods[5];
 	int size = sizeof(foods) / sizeof(std::string);
 	std::string temp;
@@ -965,9 +973,157 @@ int main()
 	//}
 
 	// QUIZ GAME
-	
 
-	return 0;
+	//std::string questions[] = { "1. What year C++ was invented?: ",
+	//							"2. Who invented C++?: ",
+	//							"3. What is the predecessor of C++?: ",
+	//							"4. Is the Earth flat?: ",
+	//							"5. When FNAF 1 launched?: ",
+	//							"6. What year WW2 ended?: " };
+
+	//std::string options[][4] = { { "A. 1969", "B. 1975", "C. 1985", "D. 1989" },
+	//							{ "A.Guido van Rossum", "B.Bjarne Stroustrup", "C.John Carmack", "D.Mark Zuckerberg" },
+	//							{ "A. C", "B. C+", "C. C--", "D. B++" },
+	//							{ "A. yes", "B. No", "C. Sometimes", "D. What's Earth?"},
+	//							{ "A. 2013", "B. 2015", "C. 2014", "D. 2016"},
+	//							{ "A. 1938", "B. 1942", "C. 1935", "D. 1945"} };
+
+	//char answerKey[] = {'C', 'B', 'A', 'B', 'C', 'D'};
+
+	//int size = sizeof(questions)/sizeof(questions[0]);
+	//char guess;
+	//int score = 0;
+
+	//for (int i = 0; i < size; i++)
+	//{
+	//	std::cout << "*************************************\n";
+	//	std::cout << questions[i] << '\n';
+	//	std::cout << "*************************************\n\n";
+
+	//	for (int j = 0; j < sizeof(options[i])/sizeof(options[i][0]); j++)
+	//	{
+	//		std::cout << options[i][j] << '\n';
+	//	}
+
+	//	std::cin >> guess;
+	//	guess = toupper(guess);
+
+	//	if (guess == answerKey[i])
+	//	{
+	//		std::cout << "\nCORRECT\n\n";
+	//		score++;
+	//	}
+	//	else
+	//	{
+	//		std::cout << "\nWRONG\n";
+	//		std::cout << "Answer: " << answerKey[i] << "\n\n";
+	//	}
+	//}
+
+	//std::cout << "*************************************\n";
+	//std::cout << "*              RESULTS              *\n";
+	//std::cout << "*************************************\n\n";
+
+	//std::cout << "Your score is: " << score << " of " << size;
+	//std::cout << "\nAverage: " << (score/(double)size) * 100 << "%";
+
+	// MEMORY ADDRESSES
+	// A location in memory where data is stored 
+	// a memory can be accessed with & (address of operator)
+		
+	//std::string name = "Mateus";
+	//int age = 21;
+	//bool student = true;
+
+	//std::cout << &name << '\n';
+	//std::cout << &age << '\n';
+	//std::cout << &student << '\n';
+
+	// PASS BY VALUE VS PASS BY REFERENCE
+
+	//std::string x = "Kool-Aid";
+	//std::string y = "Water";
+	
+	//Swap(x, y);
+	//
+	//std::cout << "X: " << x << '\n';
+	//std::cout << "Y: " << y << '\n';
+	
+	// CONST PARAMETERS 
+	// parameter thar is effectively read-only
+	// code is more secure & conveys intent useful for references and pointers
+	
+	//std::string name = "Mateus";
+	//int age = 21;
+
+	//PrintInfo(name, age);
+
+	// CREDIT CARD VALIDATOR PROGRAM
+	
+	//std::string cardNumber;
+	//int results = 0;
+	//std::cout << "Enter a credit card number: ";
+	//std::cin >> cardNumber;
+
+	//results = SumEvenDigits(cardNumber) + SumOddDigits(cardNumber);
+	//
+	//if (results % 10 == 0)
+	//{
+	//	std::cout << cardNumber << " is valid";
+	//}
+	//else
+	//{
+	//	std::cout << cardNumber << " is not valid";
+	//}
+
+	//return 0;
+
+	// POINTERS
+	// variable that stores a memory address of another variable
+	// sometimes it's easier to work with an address
+	
+	// & address-of operator
+	// * deference operator
+		
+	//std::string name = "Mateus";
+	//int age = 21;
+	//std::string freePizzas[5] = { "Pizza 1", "Pizza 2", "Pizza 3", "Pizza 4", "Pizza 5" };
+
+	//std::string* pName = &name;
+	//int* pAge = &age;
+	//std::string* pFreePizzas = freePizzas;
+
+	//std::cout << *pName << '\n';
+	//std::cout << *pAge << '\n';
+
+	// NULL POINTER
+	// 
+	// Null value = a special value that means something has no value.
+	//				When a pointer is holfing a null value,
+	//				thar pointer is not pointing at anything (null pointer)
+	
+	// nullptr = Keyword represents a null pointer literal
+
+	// nullptrs are helpful when determining if an address
+	// was succeddfully assigned to a pointer
+	
+	//int* pointer = nullptr;
+	//int x = 123;
+
+	//pointer = &x;
+
+	//if (pointer)
+	//{
+	//	std::cout << "Address was assigned!\n";
+	//	std::cout << *pointer;
+	//}
+	//else
+	//{
+	//	std::cout << "Address was not assigned!\n";
+	//}
+
+	// TIC TAC TOE GAME
+	
 }
 
 void HappyBirthday(std::string name, int age)
@@ -1206,4 +1362,48 @@ void Sort(int array[], int size)
 			}
 		}
 	}
+}
+
+void Swap(std::string &x, std::string &y)
+{
+	std::string temp;
+
+	temp = x;
+	x = y;
+	y = temp;
+}
+
+void PrintInfo(const std::string &name, const int &age)
+{
+	std::cout << name << '\n';
+	std::cout << age;
+}
+
+int GetDigit(const int number)
+{
+	return number % 10 + (number/ 10 % 10);
+}
+
+int SumOddDigits(const std::string cardNumber)
+{
+	int sum = 0;
+
+	for (int i = cardNumber.size() - 1; i >= 0; i -= 2)
+	{
+		sum += GetDigit(cardNumber[i] - '0');
+	}
+
+	return sum;
+}
+
+int SumEvenDigits(const std::string cardNumber)
+{
+	int sum = 0;
+
+	for (int i = cardNumber.size() - 2; i >= 0; i-=2)
+	{
+		sum += GetDigit((cardNumber[i] - '0') * 2);
+	}
+
+	return sum;
 }

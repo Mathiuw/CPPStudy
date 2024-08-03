@@ -1,4 +1,6 @@
 ﻿  helloworld.cpp
-C:\Users\mateu\source\repos\CPPStudy\helloworld.cpp(1083,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\mateu\source\repos\CPPStudy\helloworld.cpp(1095,1): warning C4715: 'GetComputerChoice': not all control paths return a value
+C:\Users\mateu\source\repos\CPPStudy\helloworld.cpp(1242,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\mateu\source\repos\CPPStudy\helloworld.cpp(1391,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\mateu\source\repos\CPPStudy\helloworld.cpp(1403,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\mateu\source\repos\CPPStudy\helloworld.cpp(1254,1): warning C4715: 'GetComputerChoice': not all control paths return a value
   CPPStudy.vcxproj -> C:\Users\mateu\source\repos\CPPStudy\x64\Debug\CPPStudy.exe
