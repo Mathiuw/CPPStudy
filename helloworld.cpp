@@ -79,6 +79,23 @@ bool CheckWinner(char* spaces, char player, char computer);
 
 bool CheckTie(char* spaces);
 
+void Walk(int steps);
+
+int factorial(int num);
+
+template <typename T, typename U>
+auto Max(T x, U y) 
+{
+	return (x > y) ? x : y;
+}
+
+struct student
+{
+	std::string name;
+	double gpa;
+	bool enrolled = true;
+};
+
 int main()
 {
 	// This is a comment
@@ -1174,7 +1191,84 @@ int main()
 	//std::cout << "Thanks for playing!";
 
 	// DYNAMIC MEMORY
+	// Memoty that is allocated after the program is already compiled & running.
+	// Use the 'new' operator to allocate memory in the heap rather than the stack
+	// Useful when we don't know how much memory we will need. Makes our programs more flexible, especially when accepting user input.
+
+	//int* pNum = nullptr;
+
+	//pNum = new int;
+	//*pNum = 21;
+
+	//std::cout << "Address: " << pNum << '\n';
+	//std::cout << "Value: " << *pNum << '\n';
+	//
+	//delete pNum;
+
+	//char* pGrades = NULL;
+	//int size;
+
+	//std::cout << "How many grades to enter in?: ";
+	//std::cin >> size;
+
+	//pGrades = new char[size];
+
+	//for (int i = 0; i < size; i++)
+	//{
+	//	std::cout << "Enter grade #" << i + 1 << ": ";
+	//	std::cin >> pGrades[i];
+	//}
+
+	//for (int i = 0; i < size; i++)
+	//{
+	//	std::cout << pGrades[i] << ' ';
+	//}
+
+	//delete[] pGrades;
+
+	// RECURSION
+
+	// Walk(100);
+	//std::cout << factorial(10);
+
+	// FUNCTIONS TEMPLATES
+	// Describes what a function looks like.
+	// Can be used to generate as many overloaded functions as needed, each using different data types
+
+	//std::cout << Max(2, 1.75) << '\n';
+
+	// STRUCTS
 	
+	//student student1;
+	//student1.name = "Spongebob";
+	//student1.gpa = 3.2;
+
+	//student student2;
+	//student2.name = "Patrick";
+	//student2.gpa = 2.1;
+
+	//student student3;
+	//student3.name = "Squidward";
+	//student3.gpa = 1.5;
+	//student3.enrolled = false;
+
+	//std::cout << student1.name << '\n';
+	//std::cout << student1.gpa << '\n';
+	//std::cout << student1.enrolled << '\n';
+	//
+	//std::cout << '\n';
+
+	//std::cout << student2.name << '\n';
+	//std::cout << student2.gpa << '\n';
+	//std::cout << student2.enrolled << '\n';
+
+	//std::cout << '\n';
+
+	//std::cout << student3.name << '\n';
+	//std::cout << student3.gpa << '\n';
+	//std::cout << student3.enrolled << '\n';
+
+	// PASS STRUCTS AS ARGUMENTS
 	
 	return 0;
 }
@@ -1566,4 +1660,25 @@ bool CheckTie(char* spaces)
 
 	std::cout << "IT'S A TIE!\n";
 	return true;
+}
+
+void Walk(int steps)
+{
+	if (steps > 0)
+	{
+		std::cout << "You take a step!\n";
+		Walk(steps - 1);
+	}
+}
+
+int factorial(int num)
+{
+	if (num > 1)
+	{
+		return num * factorial(num - 1);
+	}
+	else
+	{
+		return 1;
+	}
 }
