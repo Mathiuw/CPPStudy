@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "CPPStudy\\x64\\Debug\\helloworld.obj",
+            "outputs": [
+                "C:\\Users\\mateu\\source\\repos\\CPPStudy\\CPPStudy\\x64\\Debug\\vc143.pdb",
+                "CPPStudy\\x64\\Debug\\"
+            ],
+            "requires": []
+        }
+    ]
+}

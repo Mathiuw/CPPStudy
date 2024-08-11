@@ -27,7 +27,7 @@ void HappyBirthday(std::string name, int age);
 
 double square(double length);
 
-double cube(double length);
+//double Cube(double length);
 
 std::string ConcatStrings(std::string string1, std::string string2);
 
@@ -89,11 +89,218 @@ auto Max(T x, U y)
 	return (x > y) ? x : y;
 }
 
-struct student
+//struct Student
+//{
+//	std::string name;
+//	double gpa;
+//	bool enrolled = true;
+//};
+
+struct CarStruct
 {
+	std::string model;
+	int year = 0;
+	std::string color;
+};
+
+void PrintCar(const CarStruct& car);
+
+void PaintCar(CarStruct& car, std::string color);
+
+enum Day
+{
+	sunday = 0, monday = 1, tuesday = 2, wednesday = 3, thursday = 4, friday = 5, saturday = 6
+};
+
+enum Flavor
+{
+	vanilla, chocolate, strawberry, mint
+};
+
+class Human
+{
+
+public:
+	std::string name = "Rick";
+	std::string occupation = "scientist";
+	int age = 70;
+
+	void Eat() 
+	{
+		std::cout << "This person is eating\n";
+	}
+
+	void Drink() 
+	{
+		std::cout << "This person is drinking\n";
+	}
+
+	void Sleep() 
+	{
+		std::cout << "This person is sleeping\n";
+	}
+
+};
+
+class Car
+{
+public:
+	Car(std::string make, std::string model, int year, std::string color)
+	{
+		this->make = make;
+		this->model = model;
+		this->year = year;
+		this->color = color;
+	}
+
+	std::string make;
+	std::string model;
+	int year = 0;
+	std::string color;
+
+	void Accelerate() 
+	{
+		std::cout << "You step on the gas\n";
+	}
+
+	void Break()
+	{
+		std::cout << "You step on the brakes\n";
+	}
+
+};
+
+class Student
+{
+public:
+	Student(std::string name, int age, double gpa)
+	{
+		this->name = name;
+		this->age = age;
+		this->gpa = gpa;
+	}
+
 	std::string name;
+	int age;
 	double gpa;
-	bool enrolled = true;
+
+};
+
+class Pizza
+{
+public:
+	Pizza(std::string topping1) 
+	{
+		this->topping1 = topping1;
+	}
+
+	Pizza(std::string topping1, std::string topping2)
+	{
+		this->topping1 = topping1;
+		this->topping2 = topping2;
+	}
+
+	std::string topping1;
+	std::string topping2;
+
+};
+
+class Stove
+{
+public:
+	Stove(int temperature) 
+	{
+		SetTemperature(temperature);
+	}
+
+	int GetTemperature() 
+	{
+		return temperature;
+	}
+
+	void SetTemperature(int temperature) 
+	{
+		if (temperature < 0)
+		{
+			temperature = 0;
+		}
+		else if (temperature > 10)
+		{
+			temperature = 10;
+		}
+		else
+		{
+			this->temperature = temperature;
+		}
+	}
+
+private:
+	int temperature = 0;
+
+};
+
+class Animal
+{
+public:
+	bool alive = true;
+
+	void Eat() 
+	{
+		std::cout << "This animal is eating\n";
+	}
+
+};
+
+class Dog : public Animal
+{
+public:
+	void Bark() 
+	{
+		std::cout << "The dogs goes woof\n";
+	}
+};
+
+class Cat: public Animal
+{
+public:
+	void Meow() 
+	{
+		std::cout << "The cat goes meow\n";
+	}
+};
+
+class Shape 
+{
+public:
+	double area;
+	double volume;
+
+};
+
+class Cube : public Shape
+{
+public:
+	double side;
+
+	Cube(double side)
+	{
+		this->side = side;
+		this->area = side * side * 6;
+		this->volume = side * side * side;
+	}
+};
+
+class Sphere : public Shape 
+{
+public:
+	double radius;
+
+	Sphere(double radius) 
+	{
+		this->radius = radius;
+		this->area = 4 * 3.14159 * (radius * radius);
+		this->volume = (4 / 3.0) * 3.14159 * (radius * radius * radius);
+	}
 };
 
 int main()
@@ -147,7 +354,7 @@ int main()
 	//std::cout << currency << "\n\n";
 
 	// boolean (true or false)
-	//bool student = false;
+	//bool Student = false;
 	//bool power = true;
 	//bool forSale = true;
 
@@ -203,11 +410,11 @@ int main()
 
 	//int students = 20;
 
-	//student = student + 1
+	//Student = Student + 1
 	//students += 1;
 	//students++;
 
-	//students = student - 1;
+	//students = Student - 1;
 	//students -= 1;
 	//students--;
 
@@ -723,7 +930,7 @@ int main()
 
 	//double length = 5.0;
 	//double area = square(length);
-	//double volume = cube(length);
+	//double volume = Cube(length);
 
 	//std::cout << "Area: " << area << "cm^2\n";
 	//std::cout << "Volume: " << volume << "cm^3\n";
@@ -830,14 +1037,14 @@ int main()
 	//double gpa = 2.5;
 	//std::string name = "Mateus";
 	//char grade = 'F';
-	//bool student = true;
+	//bool Student = true;
 	//char grades[] = { 'A', 'B', 'C', 'D', 'F' };
 	//std::string students[] = { "Spongebob", "Patrick", "Squidward", "Sandy" };
 
 	//std::cout << sizeof(gpa) << " bytes\n";
 	//std::cout << sizeof(name) << " bytes\n";
 	//std::cout << sizeof(grade) << " bytes\n";
-	//std::cout << sizeof(student) << " bytes\n";
+	//std::cout << sizeof(Student) << " bytes\n";
 	//std::cout << sizeof(grades)/sizeof(char) << " elements\n";
 	//std::cout << sizeof(students)/sizeof(std::string) << " elements\n";
 
@@ -861,9 +1068,9 @@ int main()
 
 	//std::string students[] = { "Spongebob", "Patrick", "Squidward", "Sandy" };
 	//
-	//for(std::string student : students)
+	//for(std::string Student : students)
 	//{
-	//	std::cout << student << '\n';
+	//	std::cout << Student << '\n';
 	//}
 
 	//int grades[] = { 85, 68, 46, 39, 97 };
@@ -1062,11 +1269,11 @@ int main()
 		
 	//std::string name = "Mateus";
 	//int age = 21;
-	//bool student = true;
+	//bool Student = true;
 
 	//std::cout << &name << '\n';
 	//std::cout << &age << '\n';
-	//std::cout << &student << '\n';
+	//std::cout << &Student << '\n';
 
 	// PASS BY VALUE VS PASS BY REFERENCE
 
@@ -1239,15 +1446,15 @@ int main()
 
 	// STRUCTS
 	
-	//student student1;
+	//Student student1;
 	//student1.name = "Spongebob";
 	//student1.gpa = 3.2;
 
-	//student student2;
+	//Student student2;
 	//student2.name = "Patrick";
 	//student2.gpa = 2.1;
 
-	//student student3;
+	//Student student3;
 	//student3.name = "Squidward";
 	//student3.gpa = 1.5;
 	//student3.enrolled = false;
@@ -1270,6 +1477,190 @@ int main()
 
 	// PASS STRUCTS AS ARGUMENTS
 	
+	//CarStruct car1;
+	//CarStruct car2;
+
+	//car1.model = "Mustang";
+	//car1.year = 2023;
+	//car1.color = "red";
+
+	//car2.model = "Corvette";
+	//car2.year = 2024;
+	//car2.color = "blue";
+
+	//PaintCar(car1, "silver");
+	//PaintCar(car2, "gold");
+
+	//PrintCar(car1);
+	//PrintCar(car2);
+
+	// ENUMS
+
+	//Day today = wednesday;
+
+	//switch (today)
+	//{
+	//case sunday:
+	//	std::cout << "it's Sunday!\n";
+	//	break;
+	//case monday:
+	//	std::cout << "it's Monday!\n";
+	//	break;
+	//case tuesday:
+	//	std::cout << "it's Tuesday!\n";
+	//	break;
+	//case wednesday:
+	//	std::cout << "it's Wednesday!\n";
+	//	break;
+	//case thursday:
+	//	std::cout << "it's Thursday!\n";
+	//	break;
+	//case friday:
+	//	std::cout << "it's Friday!\n";
+	//	break;
+	//case saturday:
+	//	std::cout << "it's Saturday!\n";
+	//	break;
+	//default:
+	//	break;
+	//}
+
+	// OBJECT ORIENTED PROGRAMMING
+	
+	//Human human1;
+	//Human human2;
+
+	//human2.name = "Morty";
+	//human2.occupation = "student";
+	//human2.age = 15;
+
+	//std::cout << human1.name << '\n';
+	//std::cout << human1.occupation << '\n';
+	//std::cout << human1.age << '\n';
+	//
+	//human1.Eat();
+	//human1.Drink();
+	//human1.Sleep();
+
+	//std::cout << '\n';
+
+	//std::cout << human2.name << '\n';
+	//std::cout << human2.occupation << '\n';
+	//std::cout << human2.age << '\n';
+
+	//std::cout << '\n';
+
+	//human2.Eat();
+	//human2.Drink();
+	//human2.Sleep();
+
+	//Car car1;
+
+	//car1.make = "Ford";
+	//car1.model = "Mustang";
+	//car1.year = 2023;
+	//car1.color = "Silver";
+
+	//std::cout << car1.make << '\n';
+	//std::cout << car1.model << '\n';
+	//std::cout << car1.year << '\n';
+	//std::cout << car1.color << '\n';
+
+	//std::cout << '\n';
+
+	//car1.Accelerate();
+	//car1.Break();
+
+	// CONSTRUCTORS
+
+	//Student student1("Spongebob", 25, 3.2); 
+	//Student student2("Patrick", 40, 1.5); 
+	//Student student3("Sandy", 21, 4.f); 
+
+	//std::cout << student1.name << '\n';
+	//std::cout << student1.age << '\n';
+	//std::cout << student1.gpa << '\n';
+
+	//std::cout << '\n';
+
+	//std::cout << student2.name << '\n';
+	//std::cout << student2.age << '\n';
+	//std::cout << student2.gpa << '\n';
+
+	//std::cout << '\n';
+
+	//std::cout << student3.name << '\n';
+	//std::cout << student3.age << '\n';
+	//std::cout << student3.gpa << '\n';
+
+	//std::cout << '\n';
+
+	//Car car1("Chevy", "Corvette", 2022, "blue");
+	//Car car2("Fors", "Mustang", 2022, "red");
+
+	//std::cout << car1.make << '\n';
+	//std::cout << car1.model << '\n';
+	//std::cout << car1.year << '\n';
+	//std::cout << car1.color << '\n';
+
+	//std::cout << '\n';
+
+	//std::cout << car2.make << '\n';
+	//std::cout << car2.model << '\n';
+	//std::cout << car2.year << '\n';
+	//std::cout << car2.color << '\n';
+
+	// OVERLOAD CONSTRUCTORS
+
+	//Pizza pizza1("Pepperoni");
+	//Pizza pizza2("Mushrooms", "Peppers");
+	//Pizza pizza3();
+	//
+	//std::cout << pizza1.topping1 << '\n';
+
+	//std::cout << '\n';
+
+	//std::cout << pizza2.topping1 << '\n';
+	//std::cout << pizza2.topping2 << '\n';
+
+	// GETTERS & SETTERS
+
+	//Stove stove(2);
+
+	//stove.SetTemperature(3);
+
+	//std::cout << "The temperature setting is: " << stove.GetTemperature();
+
+	// INHERITANCE
+	
+	//Dog dog;
+	//Cat cat;
+
+	//std::cout << dog.alive << '\n';
+	//dog.Eat();
+	//dog.Bark();
+
+	//std::cout << '\n';
+
+	//std::cout << cat.alive << '\n';
+	//cat.Eat();
+	//cat.Meow();
+
+	//std::cout << '\n';
+
+	//Cube cube(10);
+	//Sphere sphere(5);
+
+	//std::cout << "Area: " << cube.area << "cm\n";
+	//std::cout << "Volume: " << cube.volume << "cm\n";
+
+	//std::cout << '\n';
+
+	//std::cout << "Area: " << sphere.area << "cm\n";
+	//std::cout << "Volume: " << sphere.volume << "cm\n";
+
+	// FINISH
+
 	return 0;
 }
 
@@ -1288,10 +1679,10 @@ double square(double length)
 	return length * length;
 }
 
-double cube(double length)
-{
-	return length * length * length;
-}
+//double Cube(double length)
+//{
+//	return length * length * length;
+//}
 
 std::string ConcatStrings(std::string string1, std::string string2)
 {
@@ -1397,6 +1788,8 @@ char GetComputerChoice()
 		return 'p';
 	case 3:
 		return 's';
+	default:
+		return 'X';
 	}
 }
 
@@ -1681,4 +2074,16 @@ int factorial(int num)
 	{
 		return 1;
 	}
+}
+
+void PrintCar(const CarStruct& car)
+{
+	std::cout << car.model << '\n';
+	std::cout << car.year << '\n';
+	std::cout << car.color << '\n';
+}
+
+void PaintCar(CarStruct& car, std::string color)
+{
+	car.color = color;
 }
